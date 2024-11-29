@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Lab Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Include Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="top-container">
+    <!-- Left Panel (Sensor Values) -->
+    <div class="left-panel">
+      <h2>Sensors</h2>
+      <div class="grid">
+        <div class="inner-box">
+          <p><strong>Air Quality</strong></p>
+          <p id="air-quality">98 %</p>
+        </div>
+        <div class="inner-box">
+          <p><strong>Brightness</strong></p>
+          <p id="brightness">200</p>
+        </div>
+        <div class="inner-box">
+          <p><strong>Temperature</strong></p>
+          <p id="temperature">20 °C</p>
+        </div>
+        <div class="inner-box">
+          <p><strong>Humidity</strong></p>
+          <p id="humidity">58 %</p>
+        </div>
+        <div class="inner-box">
+          <p><strong>Current</strong></p>
+          <p id="current">0.005 A</p>
+        </div>
+        <div class="inner-box">
+          <p><strong>Voltage</strong></p>
+          <p id="voltage">232 V</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel (Appliance Controls) -->
+    <div class="right-panel">
+      <h2>Appliances</h2>
+      <div class="grid">
+        <div class="inner-box">
+          <label for="ac-slider" class="appliance-label">AC</label>
+          <input type="range" id="ac-slider" min="18" max="30" value="18">
+          <p><span id="ac-value">-</span>°C</p>
+        </div>
+        <div class="inner-box">
+          <label for="light-slider" class="appliance-label">Light</label>
+          <input type="range" id="light-slider" min="0" max="100" value="0">
+          <p><span id="light-value">-</span>%</p>
+        </div>
+        <div class="inner-box">
+          <label for="fan-toggle" class="appliance-label">Fan</label>
+          <div class="inner-box-fan">
+            <label class="switch">
+              <input type="checkbox" id="fan-toggle">
+              <span class="slider"></span>
+            </label>
+            <p><span id="fan-state">-</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Section (Charts) -->
+  <div class="bottom-container">
+    <!-- Left Section for Voltage and Current -->
+    <div class="left-bottom">
+      <div class="chart-box">
+        <h3>Voltage (V) History</h3>
+        <div id="voltage-chart" class="chart"></div>
+      </div>
+      <div class="chart-box">
+        <h3>Current (A) History</h3>
+        <div id="current-chart" class="chart"></div>
+      </div>
+    </div>
+  
+    <!-- Right Section for Power -->
+    <div class="right-bottom">
+      <div class="chart-box">
+        <h3>Power (Watt) History</h3>
+        <div id="power-chart" class="chart"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>2024 Smart Lab Dashboard</p>
+  </div>
+  
+  <script type="module" src="app.js"></script>
+</body>
+</html>
