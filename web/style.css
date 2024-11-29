@@ -1,0 +1,186 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+}
+
+h2 {
+  margin-top: 7px;
+  margin-bottom: 12px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+/* Top Container (50% of screen) */
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  height: 40vh;
+  margin-top: 20px;
+}
+
+/* Left and Right Panels with Outer Box */
+.left-panel,
+.right-panel {
+  flex: 1;
+  margin: 0 7px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.inner-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  height: 120px; /* Ensures square shape when width is controlled by grid */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Toggle Switch Design */
+/* Add spacing between label and toggle switch */
+.appliance-label {
+  margin-bottom: 10px; /* Add space below the label */
+  font-weight: bold;   /* Make the label bold for better visibility */
+}
+
+/* Inner-box-fan specific styling */
+.inner-box-fan {
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  display: flex; /* Ensure flexbox for proper alignment */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+/* Bottom Container (50% Height, Outer Box) */
+.bottom-container {
+  display: flex;
+  width: 95%;
+  height: 55vh;
+  margin-top: 7px;
+  margin-bottom: 15px;
+}
+
+/* Left Section (Voltage and Current) */
+.left-bottom {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 7px;
+  overflow-y: auto;
+}
+
+/* Right Section (Power) */
+.right-bottom {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding: 7px;
+  overflow-y: auto;
+}
+
+h3 {
+  margin-top: 7px;
+  margin-bottom: 1px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+/* Chart Box for Individual Charts */
+.chart-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 50%;        /* Set height to 50% of the parent box */
+  overflow: hidden;
+}
+
+.chart {
+  position: relative; /* Ensure the chart stays contained */
+  transform: scale(1);
+  overflow: hidden;   /* Prevent plots from leaking out */
+}
+
+
+/* Footer Styling */
+.footer {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #666;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
