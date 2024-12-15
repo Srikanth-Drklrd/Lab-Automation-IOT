@@ -109,7 +109,7 @@ onValue(dbRef, (snapshot) => {
 
   // Common layout for all charts to fully utilize their containers
   const layout = {
-    margin: { t: 10, r: 10, b: 20, l: 37 }, // Minimal margins for a larger plot area
+    margin: { t: 10, r: 10, b: 16, l: 37 }, // Minimal margins for a larger plot area
     autosize: true, // Automatically fit the container
   };
 
