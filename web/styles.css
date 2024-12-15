@@ -17,7 +17,7 @@ h2 {
 
 /* Ribbon Styles */
 .ribbon {
-  background-color: #4CAF50; /* Green background */
+  background-color: rgba(1, 128, 181, 0.86); /* Green background */
   color: white; /* White text color */
   display: flex; /* Flexbox for layout */
   justify-content: space-between; /* Space between left and right sections */
