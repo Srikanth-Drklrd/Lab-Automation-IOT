@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
 // Firebase configuration
@@ -15,7 +16,18 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getDatabase(app);
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("User is authenticated:", user.displayName);
+    document.getElementById("user-email").textContent = user.email;
+  } else {
+    console.log("User is not authenticated. Redirecting to login...");
+    window.location.href = "./login.html";
+  }
+});
 
 // Reference to database
 const dbRef = ref(db, "lab1");
@@ -135,3 +147,28 @@ window.addEventListener("resize", () => {
      height: powerChart.offsetHeight,
    });
 });
+
+// Function to toggle the visibility of the dropdown menu
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown-menu');
+  if (dropdown.style.display === 'block') {
+    dropdown.style.display = 'none';
+  } else {
+    dropdown.style.display = 'block';
+  }
+}
+
+// Function to sign out (placeholder for actual functionality)
+function signOut() {
+  auth.signOut()
+    .then(() => {
+      // Redirect to the login page after sign-out
+      window.location.href = "login.html"; // Change this to your login page URL
+    })
+    .catch((error) => {
+      console.error("Error signing out:", error.message);
+    });
+}
+
+document.querySelector('.user-icon').addEventListener('click', toggleDropdown);
+document.getElementById('sign-out').addEventListener('click', signOut);
