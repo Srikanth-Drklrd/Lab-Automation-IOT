@@ -17,18 +17,18 @@ h2 {
 
 /* Ribbon Styles */
 .ribbon {
-  background-color: rgba(1, 128, 181, 0.86); /* Green background */
-  color: white; /* White text color */
-  display: flex; /* Flexbox for layout */
-  justify-content: space-between; /* Space between left and right sections */
-  align-items: center; /* Vertically center the content */
-  padding: 5px 10px; /* Adjusted padding for height */
-  font-size: 14px; /* Standard font size */
-  width: 100%; /* Ensure full width */
-  position: sticky; /* Stick to the top of the page */
-  top: 0; /* Fix to the top */
-  z-index: 1000; /* Ensure it stays above other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  background-color: rgba(1, 128, 181, 0.86);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .ribbon-left {
