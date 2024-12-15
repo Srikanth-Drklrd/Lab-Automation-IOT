@@ -163,7 +163,7 @@ function signOut() {
   auth.signOut()
     .then(() => {
       // Redirect to the login page after sign-out
-      window.location.href = "login.html"; // Change this to your login page URL
+      window.location.href = "./index.html"; // Change this to your login page URL
     })
     .catch((error) => {
       console.error("Error signing out:", error.message);
