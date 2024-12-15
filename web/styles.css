@@ -15,13 +15,103 @@ h2 {
   margin-right: 7px;
 }
 
-/* Top Container (50% of screen) */
+/* Ribbon Styles */
+.ribbon {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text color */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between left and right sections */
+  align-items: center; /* Vertically center the content */
+  padding: 5px 10px; /* Adjusted padding for height */
+  font-size: 14px; /* Standard font size */
+  width: 100%; /* Ensure full width */
+  position: sticky; /* Stick to the top of the page */
+  top: 0; /* Fix to the top */
+  z-index: 1000; /* Ensure it stays above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.ribbon-left {
+  flex: 1;
+  text-align: left;
+  margin: 0 15px;
+  padding: 0;
+}
+
+.ribbon-right {
+  flex: 1;
+  text-align: right;
+  margin: 0 15px;
+  position: relative;
+}
+
+/* User Icon Styles */
+.user-menu {
+  display: inline-block;
+  position: relative; /* Needed for dropdown positioning */
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  vertical-align: middle;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 30px; /* Position below the icon */
+  right: 0; /* Align to the right edge */
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 200px; /* Adjust dropdown width */
+  text-align: left;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.dropdown p {
+  margin: 0;
+  padding: 8px;
+  font-size: 14px;
+  color: #333; /* Text color */
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown p:last-child {
+  border-bottom: none;
+}
+
+.dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background-color: #45a049;
+}
+
+
+/* Top Container (35% of screen) */
 .top-container {
   display: flex;
   justify-content: space-between;
   width: 95%;
-  height: 40vh;
-  margin-top: 20px;
+  height: 35vh;
+  margin-top: 13px;
 }
 
 /* Left and Right Panels with Outer Box */
@@ -147,6 +237,15 @@ h3 {
   margin-bottom: 1px;
   margin-left: 7px;
   margin-right: 7px;
+}
+
+h4 {
+  margin-top: 7px;
+  margin-bottom: 4px;
+  margin-left: 7px;
+  margin-right: 7px;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 /* Chart Box for Individual Charts */
