@@ -178,7 +178,7 @@
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithPopup(provider)
         .then((result) => {
-          window.location.href = "./index.html";
+          window.location.href = "./mainpage.html";
         })
         .catch((error) => {
           console.error("Error during sign-in:", error.message);
@@ -194,7 +194,7 @@
   if (email && password) {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        window.location.href = "./index.html";
+        window.location.href = "./mainpage.html";
       })
       .catch((error) => {
         console.error('Error during email login:', error);
