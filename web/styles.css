@@ -69,7 +69,7 @@ h2 {
   color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  width: 200px; /* Adjust dropdown width */
+  width: 300px; /* Adjust dropdown width */
   text-align: left;
   z-index: 1000;
   padding: 10px;
