@@ -171,6 +171,7 @@
     // Initialize Firebase
     const app = firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
+    const dbRef = firebase.database().ref('lab1');
 
     // Google Sign-In
     const googleSignInBtn = document.getElementById("googleSignIn");
