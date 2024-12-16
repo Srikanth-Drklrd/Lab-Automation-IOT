@@ -178,7 +178,22 @@
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithPopup(provider)
         .then((result) => {
-          window.location.href = "./mainpage.html";
+        dbRef.get()
+          .then((snapshot) => {
+          if (snapshot.exists()) {
+            console.log('Access granted.');
+            window.location.href = "./mainpage.html";
+          } else {
+            alert("Access denied. Please contact admin for assistance.");
+            auth.signOut(); // Optional: Sign out unauthorized users
+          }
+        })
+        .catch((error) => {
+          // Error indicates no access or other issues
+          console.error("Error reading data:", error);
+          alert("Access denied. Please contact admin for assistance.");
+          auth.signOut(); // Optional
+        });
         })
         .catch((error) => {
           console.error("Error during sign-in:", error.message);
